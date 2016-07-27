@@ -268,6 +268,14 @@ header i {
     #quote p {
       font-size: 20px; } }
 
+#contato ::-webkit-input-placeholder {
+  color: #777777; }
+#contato :-moz-placeholder {
+  color: #777777; }
+#contato ::-moz-placeholder {
+  color: #777777; }
+#contato :-ms-input-placeholder {
+  color: #777777; }
 #contato input, #contato textarea {
   background-color: transparent;
   border: none;
