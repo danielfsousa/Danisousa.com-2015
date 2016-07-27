@@ -1,0 +1,30 @@
+.row.nogutters {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*="col-"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.thumb {
+  height: 250px;
+  width: 100%;
+  background-size: cover;
+
+  &:after {
+    content: "";
+    @include position(absolute, 0 0 0 0);
+    background-color: rgba(0, 0, 0, 0.13);
+    @include transition(all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000));
+
+  }
+
+  &:hover:after,
+  &:active:after {
+    background-color: $main-color-opacity;
+    @include transition(all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000));
+  }
+}

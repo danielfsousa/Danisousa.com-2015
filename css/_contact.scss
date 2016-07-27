@@ -1,0 +1,62 @@
+#contato {
+
+  input, textarea {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    font-weight: 300;
+    color: #999;
+    @include transition(all, 0.3s !important);
+
+    &:focus {
+      color: $text-color;
+      outline: none;
+      border-color: $secondary-color;
+      @include transition(all, 0.3s !important);
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 10px 10px 5px 10px;
+    border-bottom: 2px solid $main-color;
+    margin-bottom: 40px;
+
+    &:invalid {
+      box-shadow: none;
+      border-bottom: 2px solid #c0392b;
+    }
+
+  }
+
+  textarea {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid $main-color;
+    height: 360px;
+
+  }
+
+  button {
+    margin-top: 38px;
+  }
+
+  #feedbackForm {
+    float: left;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  .erro {
+    color: #c0392b;
+  }
+
+  .sucesso {
+    color: $main-color;
+  }
+
+
+}
+
+

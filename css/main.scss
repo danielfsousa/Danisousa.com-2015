@@ -1,0 +1,84 @@
+@import "vars";
+@import "bourbon/_bourbon";
+@import "mixins";
+@import "fonts";
+@import "header";
+@import "about";
+@import "quote";
+@import "contact";
+@import "footer";
+@import "portfolio";
+
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  @extend html;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+a:active,
+a:focus {
+  outline: none;
+}
+
+.container {
+  @media screen and (min-width: 1200px) {
+    width: 990px;
+  }
+}
+
+#home-container {
+  width: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 36px;
+  color: $secondary-color;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.separator {
+  height: 4px;
+  width: 50px;
+  background-color: $main-color;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+button {
+  margin: 80px auto;
+  padding: 20px 35px;
+  background-color: $bg-color;
+  border: 2px solid $main-color;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $text-color;
+  @include transition(all 0.3s !important);
+
+  &:hover {
+    background-color: $main-color;
+    color: $bg-color;
+    border: 2px solid $main-color;
+    @include transition(all 0.3s !important);
+  }
+
+}
+
