@@ -34,6 +34,9 @@
     padding: 20px;
     border: 2px solid $main-color;
     height: 360px;
+    @media screen and (max-width: 451px) {
+      height: 300px;
+    }
 
   }
 

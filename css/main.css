@@ -43,8 +43,8 @@ nav {
   display: none;
   z-index: 99999;
   position: fixed;
-  top: 30px;
-  right: 30px; }
+  top: 20px;
+  right: 20px; }
 
 #nav-full {
   display: none;
@@ -190,6 +190,10 @@ header h6 {
   color: #2f2f2f;
   font-weight: 500;
   font-size: 16px; }
+  @media screen and (max-width: 451px) {
+    header h6 span {
+      display: block;
+      visibility: hidden; } }
 
 header h6 span {
   margin: 0 20px; }
@@ -293,6 +297,9 @@ header i {
   padding: 20px;
   border: 2px solid #77be32;
   height: 360px; }
+  @media screen and (max-width: 451px) {
+    #contato textarea {
+      height: 300px; } }
 #contato button {
   margin-top: 38px; }
 #contato #feedbackForm {

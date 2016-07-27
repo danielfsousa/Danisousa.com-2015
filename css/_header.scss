@@ -27,8 +27,8 @@ nav {
   display: none;
   z-index: 99999;
   position: fixed;
-  top: 30px;
-  right: 30px;
+  top: 20px;
+  right: 20px;
 }
 
 #nav-full {
@@ -171,6 +171,12 @@ header h6 {
   color: $secondary-color;
   font-weight: 500;
   font-size: 16px;
+  @media screen and (max-width: 451px) {
+    span {
+      display: block;
+      visibility: hidden;
+    }
+  }
 }
 
 header h6 span {
