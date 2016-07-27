@@ -3,6 +3,10 @@ header {
   height: 100%;
   margin: 0;
   padding: 0;
+  @media screen and (max-device-width: 768px) {
+    h1 {
+    }
+  }
 }
 
 a {
@@ -155,7 +159,10 @@ header h1 span {
     font-size: 1.4em;
   }
   @media screen and (max-width: 451px) {
-    font-size: 1em;
+    font-size: 1.2em;
+    border-top: 5px solid $main-color;
+    border-bottom: 5px solid $main-color;
+    padding-top: 5px;
   }
 }
 

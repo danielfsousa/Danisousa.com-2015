@@ -10,11 +10,12 @@
 }
 
 .thumb {
+  text-align: center;
   height: 250px;
   width: 100%;
   background-size: cover;
 
-  &:after {
+  &::before {
     content: "";
     @include position(absolute, 0 0 0 0);
     background-color: rgba(0, 0, 0, 0.13);
@@ -22,9 +23,30 @@
 
   }
 
-  &:hover:after,
-  &:active:after {
+  &:hover::before,
+  &:active::before {
     background-color: $main-color-opacity;
     @include transition(all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000));
   }
+
+  &:hover span {
+    opacity: 1;
+    //transform: translateY(-20px);
+    line-height: 250px;
+  }
+
+  span {
+    position: relative;
+    text-align: center;
+    line-height: 200px;
+    color: $bg-color;
+    opacity: 0;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all .3s ease-in-out;
+  }
 }
+
