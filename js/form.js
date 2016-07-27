@@ -22,11 +22,10 @@ $(function () {
         else {
 
             $.ajax({
-                type: "post",
+                type: "POST",
                 url: "email.php",
                 data: $(this).serialize(),
-                success: feedbackSucesso(e, "Sua mensagem foi enviada com sucesso!"),
-                error: feedbackErro(e, "Não foi possível enviar a sua mensagem")
+                success: feedbackSucesso(e, "Sua mensagem foi enviada com sucesso!")
             });
         }
 
@@ -37,7 +36,9 @@ $(function () {
         $feedback.removeClass();
         $feedback.addClass("erro");
         $feedback.text(texto);
-        foco.focus();
+        if(foco) {
+            foco.focus();
+        }
     }
 
     function feedbackSucesso(e, texto) {
