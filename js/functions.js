@@ -161,15 +161,15 @@ $(function () {
     fadeAnimate($("#call-to-action"), 73);
 
     //Start Elements Scroll Animation
-    window.sr = ScrollReveal({reset: false, duration: 1000});
+    // window.sr = ScrollReveal({reset: false, duration: 1000});
     //sr.reveal('h2');
     //sr.reveal('.separator');
-    sr.reveal('img');
-    sr.reveal('#quote-author');
-    sr.reveal('p');
-    sr.reveal('button');
-    sr.reveal('input');
-    sr.reveal('textarea');
-    sr.reveal('.thumb');
+    // sr.reveal('img');
+    // sr.reveal('#quote-author');
+    // sr.reveal('p');
+    // sr.reveal('button');
+    // sr.reveal('input');
+    // sr.reveal('textarea');
+    // sr.reveal('.thumb');
 
 });

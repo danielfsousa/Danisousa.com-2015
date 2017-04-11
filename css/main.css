@@ -99,9 +99,7 @@ nav {
   font-size: 60px;
   color: #f9f9f9;
   margin-left: 0;
-  margin-top: 30px; }
-  .ul-full li:first-child {
-    margin-top: 0; }
+  margin-top: 25px; }
   .ul-full li:after {
     content: '';
     display: block;
@@ -214,8 +212,14 @@ header i {
   color: #2f2f2f;
   font-size: 20px; }
 
+#sobre img {
+  width: 300px;
+  transform: scale(1) rotate(0);
+  transition: transform 250ms ease; }
+  #sobre img:hover {
+    transform: scale(1.1) rotate(360deg); }
 #sobre p {
-  margin-top: 80px;
+  margin-top: 60px;
   margin-bottom: 0;
   font-size: 28px;
   font-weight: 300;
@@ -230,43 +234,44 @@ header i {
     display: inline-block;
     margin-right: 10px;
     margin-left: 10px; }
-@media screen and (max-device-width: 768px) {
-  #sobre img {
-    width: 60%; }
+@media screen and (max-width: 768px) {
   #sobre p {
     margin-top: 40px;
     font-size: 22px;
     line-height: 35px; }
   #sobre .buttons-container button {
     margin-top: 35px;
-    margin-bottom: 35px; }
-  #sobre .buttons-container .ultimo {
-    margin-top: 0; } }
+    margin-bottom: 35px; } }
+@media screen and (max-width: 455px) {
+  #sobre .ultimo {
+    margin-top: 0 !important; } }
 
-#quote {
-  margin: 0;
-  padding: 60px 0;
-  background: url("../img/code.png") repeat-y;
+.social {
+  position: relative;
+  z-index: 1;
+  height: 200px;
+  background-color: #77be32;
   text-align: center;
-  font-weight: 400;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  color: #fff; }
-  #quote .row {
-    height: auto;
-    width: 60%;
-    margin: auto; }
-  #quote p {
-    font-size: 24px;
-    line-height: 1.6; }
-  #quote h6 {
-    margin-top: 40px;
-    font-size: 16px;
-    font-weight: 300; }
+  margin-bottom: 100px; }
+  .social i {
+    font-size: 70px;
+    color: #f9f9f9;
+    line-height: 200px;
+    margin-right: 3.5%;
+    margin-left: 3.5%;
+    transform: scale(0.9);
+    transition: transform 250ms ease, color 130ms linear; }
+    .social i:hover {
+      color: #2f2f2f;
+      transform: scale(1.2); }
+  .social.no-margin {
+    margin: 0; }
   @media screen and (max-device-width: 768px) {
-    #quote .row {
-      width: 85%; }
-    #quote p {
-      font-size: 20px; } }
+    .social {
+      height: 150px; }
+      .social i {
+        font-size: 50px;
+        line-height: 150px; } }
 
 #contato ::-webkit-input-placeholder {
   color: #777777; }
@@ -324,29 +329,6 @@ header i {
   position: relative;
   z-index: 1; }
 
-#social {
-  position: relative;
-  z-index: 1;
-  height: 200px;
-  background-color: #77be32;
-  text-align: center;
-  margin-bottom: 100px; }
-  #social i {
-    font-size: 70px;
-    color: #f9f9f9;
-    line-height: 200px;
-    margin-right: 2%;
-    margin-left: 2%;
-    transition: color .2s ease-in-out; }
-    #social i:hover {
-      color: #2f2f2f; }
-  @media screen and (max-device-width: 768px) {
-    #social {
-      height: 150px; }
-      #social i {
-        font-size: 50px;
-        line-height: 150px; } }
-
 #copyright {
   position: fixed;
   bottom: 0;
@@ -377,7 +359,12 @@ header i {
   text-align: center;
   height: 250px;
   width: 100%;
-  background-size: cover; }
+  background-size: 150%;
+  background-position: center;
+  transition: background-size 1s ease; }
+  .thumb:hover {
+    background-size: 120%;
+    background-position: relative; }
   .thumb::before {
     content: "";
     position: absolute;
@@ -390,25 +377,34 @@ header i {
     -moz-transition: all 0.3s cubic-bezier(0.3, 0.1, 0.58, 1);
     transition: all 0.3s cubic-bezier(0.3, 0.1, 0.58, 1); }
   .thumb:hover::before, .thumb:active::before {
-    background-color: rgba(119, 190, 50, 0.85);
+    background-color: rgba(119, 190, 50, 0.9);
     -webkit-transition: all 0.3s cubic-bezier(0.3, 0.1, 0.58, 1);
     -moz-transition: all 0.3s cubic-bezier(0.3, 0.1, 0.58, 1);
     transition: all 0.3s cubic-bezier(0.3, 0.1, 0.58, 1); }
   .thumb:hover span {
-    opacity: 1;
-    line-height: 250px; }
+    opacity: 1; }
+  .thumb:hover .titulo {
+    line-height: 220px; }
+  .thumb:hover .subtitulo {
+    line-height: 320px; }
   .thumb span {
+    display: block;
+    height: 1px;
     position: relative;
     text-align: center;
-    line-height: 200px;
     color: #f9f9f9;
     opacity: 0;
     font-family: Montserrat, Arial, sans-serif;
     font-weight: 500;
-    font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all .3s ease-in-out; }
+    transition: all 400ms ease; }
+  .thumb .titulo {
+    line-height: 50px;
+    font-size: 24px; }
+  .thumb .subtitulo {
+    line-height: 500px;
+    font-size: 13px; }
 
 html, body {
   padding: 0;
@@ -426,7 +422,8 @@ body {
   background-color: #f9f9f9;
   color: #777777; }
 
-header, section {
+header,
+section {
   background-color: inherit; }
 
 a:active,
@@ -467,15 +464,41 @@ button {
   text-transform: uppercase;
   font-weight: 600;
   color: #777777;
-  -webkit-transition: all 0.3s !important;
-  -moz-transition: all 0.3s !important;
-  transition: all 0.3s !important; }
+  /* efeito 3d */
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  -webkit-transition: border-color 0.3s, color 0.3s;
+  transition: border-color 0.3s, color 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1); }
+  button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: #77be32;
+    z-index: -1;
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s; }
   button:hover {
-    background-color: #77be32;
     color: #f9f9f9;
-    border: 2px solid #77be32;
-    -webkit-transition: all 0.3s !important;
-    -moz-transition: all 0.3s !important;
-    transition: all 0.3s !important; }
+    border-color: #77be32; }
+    button:hover::before {
+      opacity: 1;
+      background-color: #77be32;
+      -webkit-transform: rotate3d(0, 0, 1, 0deg);
+      transform: rotate3d(0, 0, 1, 0deg);
+      -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1); }
 
 /*# sourceMappingURL=main.css.map */

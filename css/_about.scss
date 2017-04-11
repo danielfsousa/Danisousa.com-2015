@@ -1,6 +1,15 @@
 #sobre {
+  img {
+    width: 300px;
+    transform: scale(1) rotate(0);
+    transition: transform 250ms ease;
+    &:hover {
+      transform: scale(1.1) rotate(360deg);
+    }
+  }
+
   p {
-    margin-top: 80px;
+    margin-top: 60px;
     margin-bottom: 0;
     font-size: 28px;
     font-weight: 300;
@@ -21,11 +30,7 @@
     }
   }
 
-  @media screen and (max-device-width: 768px) {
-    img {
-      width: 60%;
-    }
-
+  @media screen and (max-width: 768px) {
     p {
       margin-top: 40px;
       font-size: 22px;
@@ -36,10 +41,13 @@
         margin-top: 35px;
         margin-bottom: 35px;
       }
-      .ultimo {
-        margin-top: 0;
-      }
     }
+  }
+
+  @media screen and (max-width: 455px) {
+    .ultimo {
+        margin-top: 0 !important;
+      }
   }
 
 }

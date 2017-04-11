@@ -2,35 +2,6 @@
   position: relative;
   z-index: 1;
 }
-#social {
-  position:relative;
-  z-index: 1;
-  height: 200px;
-  background-color: $main-color;
-  text-align: center;
-  margin-bottom: 100px;
-
-  i {
-    font-size: 70px;
-    color: $bg-color;
-    line-height: 200px;
-    margin-right: 2%;
-    margin-left: 2%;
-    transition: color .2s ease-in-out;
-
-    &:hover {
-      color: $secondary-color;
-    }
-  }
-
-  @media screen and (max-device-width: 768px) {
-    height: 150px;
-    i {
-      font-size: 50px;
-      line-height: 150px;
-    }
-  }
-}
 
 #copyright {
 

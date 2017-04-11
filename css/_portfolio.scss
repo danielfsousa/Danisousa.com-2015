@@ -13,7 +13,14 @@
   text-align: center;
   height: 250px;
   width: 100%;
-  background-size: cover;
+  background-size: 150%;
+  background-position: center;
+  transition: background-size 1s ease;
+
+  &:hover {
+    background-size: 120%;
+    background-position: relative;
+  }
 
   &::before {
     content: "";
@@ -31,22 +38,36 @@
 
   &:hover span {
     opacity: 1;
-    //transform: translateY(-20px);
-    line-height: 250px;
+  }
+
+  &:hover .titulo {
+    line-height: 220px;
+  }
+  &:hover .subtitulo {
+    line-height: 320px;
   }
 
   span {
+    display: block;
+    height: 1px;
     position: relative;
     text-align: center;
-    line-height: 200px;
     color: $bg-color;
     opacity: 0;
     font-family: Montserrat, Arial, sans-serif;
     font-weight: 500;
-    font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all .3s ease-in-out;
+    transition: all 400ms ease;
+  }
+
+  .titulo {
+    line-height: 50px;
+    font-size: 24px;
+  }
+  .subtitulo {
+    line-height: 500px;
+    font-size: 13px;
   }
 }
 
