@@ -144,12 +144,14 @@ li {
 
 header #call-to-action {
   text-align: center;
-  position: relative;
+  position: absolute;
   margin: 0 auto;
   top: 50%;
-  -webkit-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  transform: translateY(-100%); }
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap; }
 
 header h1 {
   margin-bottom: 50px; }
