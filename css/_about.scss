@@ -2,7 +2,7 @@
   img {
     position: relative;
     width: 300px;
-    animation: img-reveal .8s ease-out;
+    animation: img-reveal .8s .5s backwards ease-out;
     transition: all .3s ease;
     &:hover {
       filter: drop-shadow(0 16px 20px #a1a1a1);

@@ -216,7 +216,7 @@ header i {
 #sobre img {
   position: relative;
   width: 300px;
-  animation: img-reveal .8s ease-out;
+  animation: img-reveal .8s .5s backwards ease-out;
   transition: all .3s ease; }
   #sobre img:hover {
     filter: drop-shadow(0 16px 20px #a1a1a1);
@@ -444,7 +444,7 @@ header i {
   margin: 0;
   overflow: visible; }
   .hamburger:hover {
-    opacity: 0.7; }
+    opacity: 0.6; }
 
 .hamburger-box {
   width: 40px;
