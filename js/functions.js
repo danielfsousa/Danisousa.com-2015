@@ -35,40 +35,16 @@ $(function () {
     }
 
     /*============================
-     ANIMATE.CSS ANIMATION FUNCTION
-     ============================*/
-    $.fn.extend({
-        animateCss: function (animationName, option) {
-            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-
-            if (option == 'show') {
-                $(this).show();
-            }
-
-            $(this).addClass('animated ' + animationName).one(animationEnd, function () {
-
-                $(this).removeClass('animated ' + animationName);
-
-                if (option == 'hide') {
-                    $(this).hide();
-                }
-            });
-        }
-    });
-
-    /*============================
      Hide/Show Hamburger
      ============================*/
+    var $hamburger = $('.hamburger');
     var $nav = $('nav');
     var $links = $nav.children('ul').find('a');
-    var $btns = $nav.find('img');
-    var $hamburger = $nav.find('#hamburger');
     var $navFull = $nav.find('#nav-full');
     var $lis = $nav.find('#nav-full li');
-    var hambIsShown = false;
     var navIsShown = false;
     var mobile = false;
-    var numOffset = 80;
+    var numOffset = 60;
 
     if(screen.width < 600) {
         mobile = true;
@@ -78,26 +54,12 @@ $(function () {
 
     $(window).scroll(function () {
         var offset = window.pageYOffset;
-        var displayHamb = $hamburger.css('display');
-        var displayNav = $navFull.css('display');
-
-        if (typeof displayNav === typeof undefined || displayNav == 'none') {
-            navIsShown = false;
-        } else if (displayNav == 'block') {
-            navIsShown = true;
-        }
-
-        if (typeof displayHamb === typeof undefined || displayHamb == 'none') {
-            hambIsShown = false;
-        } else if (displayHamb == 'block') {
-            hambIsShown = true;
-        }
+        var hambIsShown = $hamburger.hasClass('hidden');
+        var navIsShown = $navFull.hasClass('hidden');
 
         if (offset > numOffset && !hambIsShown && !navIsShown) {
-            $hamburger.removeClass();
             $hamburger.animateCss('fadeInRightBig', 'show');
         } else if (offset < numOffset && hambIsShown && !navIsShown && !mobile) {
-            $hamburger.removeClass();
             $hamburger.animateCss('fadeOutRightBig', 'hide');
         }
     });
@@ -105,37 +67,13 @@ $(function () {
     /*============================
      Hamburger and Close animations
      ============================*/
-    $btns.on('mouseover', function () {
-        $(this).animateCss('rubberBand');
-    });
-
-    //Hamburger
-    $btns.eq(0).on('click', function (e) {
-        e.preventDefault();
-        $(this).removeClass('animated rubberBand');
-        $(this).animateCss('fadeOutRightBig', 'hide');
-        $navFull.animateCss('fadeInUpBig', 'show');
-    });
-
-    //Close
-    $btns.eq(1).on('click', function (e) {
-        e.preventDefault();
-        $(this).removeClass('animated rubberBand');
-        $navFull.animateCss('fadeOutDownBig', 'hide');
-        if (window.pageYOffset > numOffset) {
-            $btns.eq(0).animateCss('fadeInRightBig', 'show');
-        }
-    });
-
-    //Click li
-    $lis.on('click', function () {
-        $navFull.animateCss('fadeOutDownBig', 'hide');
-        setTimeout(function () {
-            if (window.pageYOffset > numOffset) {
-                $btns.eq(0).animateCss('fadeInRightBig', 'show');
-            }
-        }, 100);
-    });
+     function toggleNavContainer() {
+        $hamburger.toggleClass('is-active');
+        $navFull.toggleClass('hidden');
+     }
+     
+    $hamburger.on('click', toggleNavContainer);
+    $lis.on('click', toggleNavContainer);
 
     /*============================
      SMOOTH SCROOL TO ANCHOR
@@ -171,5 +109,7 @@ $(function () {
     // sr.reveal('input');
     // sr.reveal('textarea');
     // sr.reveal('.thumb');
+
+    // TweenLite.from("#sobre img", 1.5, {yoyo:true, opacity: 0, y: 100, width: 0, ease: Elastic.easeOut.config(1, 0.4)});
 
 });

@@ -47,8 +47,7 @@ nav {
   right: 20px; }
 
 #nav-full {
-  display: none;
-  z-index: 9999;
+  z-index: 10;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -213,11 +212,13 @@ header i {
   font-size: 20px; }
 
 #sobre img {
+  position: relative;
   width: 300px;
-  transform: scale(1) rotate(0);
-  transition: transform 250ms ease; }
+  animation: img-reveal .8s ease-out;
+  transition: all .3s ease; }
   #sobre img:hover {
-    transform: scale(1.1) rotate(360deg); }
+    filter: drop-shadow(0 16px 20px #a1a1a1);
+    transform: scale(1.1); }
 #sobre p {
   margin-top: 60px;
   margin-bottom: 0;
@@ -246,6 +247,19 @@ header i {
   #sobre .ultimo {
     margin-top: 0 !important; } }
 
+@keyframes img-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0); }
+  30% {
+    opacity: .9;
+    transform: scale(1.1); }
+  60% {
+    transform: scale(0.95); }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    top: 0; } }
 .social {
   position: relative;
   z-index: 1;
@@ -406,6 +420,80 @@ header i {
     line-height: 500px;
     font-size: 13px; }
 
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+  .hamburger:hover {
+    opacity: 0.7; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #2f2f2f;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+/*
+ * Spin
+ */
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--spin .hamburger-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+  .hamburger--spin .hamburger-inner::after {
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .hamburger--spin.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+  .hamburger--spin.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
 html, body {
   padding: 0;
   margin: 0;
@@ -440,6 +528,17 @@ a:focus {
   margin: 0;
   padding: 0; }
 
+.hamburger {
+  z-index: 20;
+  position: fixed;
+  top: 20px;
+  right: 20px; }
+  .hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after {
+    transition: all .5s;
+    background-color: #f9f9f9; }
+  .hamburger:focus {
+    outline: none; }
+
 h2 {
   text-transform: uppercase;
   font-size: 36px;
@@ -455,7 +554,7 @@ h2 {
   margin: 0 auto;
   margin-bottom: 80px; }
 
-button {
+button:not(.hamburger) {
   margin: 80px auto;
   padding: 20px 35px;
   background-color: #f9f9f9;
@@ -475,7 +574,7 @@ button {
   transition: border-color 0.3s, color 0.3s;
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1); }
-  button::before {
+  button:not(.hamburger)::before {
     content: '';
     position: absolute;
     top: 0;
@@ -490,10 +589,10 @@ button {
     transform-origin: 0% 100%;
     -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
     transition: transform 0.3s, opacity 0.3s, background-color 0.3s; }
-  button:hover {
+  button:not(.hamburger):hover {
     color: #f9f9f9;
     border-color: #77be32; }
-    button:hover::before {
+    button:not(.hamburger):hover::before {
       opacity: 1;
       background-color: #77be32;
       -webkit-transform: rotate3d(0, 0, 1, 0deg);

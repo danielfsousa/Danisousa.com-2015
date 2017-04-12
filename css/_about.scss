@@ -1,10 +1,12 @@
 #sobre {
   img {
+    position: relative;
     width: 300px;
-    transform: scale(1) rotate(0);
-    transition: transform 250ms ease;
+    animation: img-reveal .8s ease-out;
+    transition: all .3s ease;
     &:hover {
-      transform: scale(1.1) rotate(360deg);
+      filter: drop-shadow(0 16px 20px #a1a1a1);
+      transform: scale(1.1);
     }
   }
 
@@ -50,4 +52,24 @@
       }
   }
 
+}
+
+@keyframes img-reveal {
+  0% {
+    opacity: 0;
+    // top: -100px;
+    transform: scale(0);
+  }
+  30% {
+    opacity: .9;
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    top: 0;
+  }
 }
