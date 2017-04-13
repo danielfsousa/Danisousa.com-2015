@@ -4,22 +4,10 @@
 /*============================
   SCREEN SIZES
 ============================*/
-@font-face {
-  font-family: Montserrat;
-  src: url(../fonts/Montserrat-SemiBold.otf);
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, li {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600; }
-@font-face {
-  font-family: Montserrat;
-  src: url(../fonts/Montserrat-Regular.otf);
-  font-weight: 500; }
-@font-face {
-  font-family: Montserrat;
-  src: url(../fonts/Montserrat-Light.otf);
-  font-weight: 400; }
-@font-face {
-  font-family: Montserrat;
-  src: url(../fonts/Montserrat-Hairline.otf);
-  font-weight: 300; }
+
 header {
   width: 100%;
   height: 100%;
@@ -135,7 +123,7 @@ li {
   border-bottom: 3px solid transparent;
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: #2f2f2f; }
   li:after {
     content: '';
@@ -169,7 +157,7 @@ header h1 span {
   padding-bottom: 9px;
   border-top: 10px solid #77be32;
   border-bottom: 10px solid #77be32;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   color: #2f2f2f;
   font-size: 100px; }
@@ -195,7 +183,7 @@ header h1 span {
 header h6 {
   text-transform: uppercase;
   color: #2f2f2f;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px; }
   @media screen and (max-width: 451px) {
     header h6 span {
@@ -231,13 +219,13 @@ header i {
     filter: drop-shadow(0 16px 20px #a1a1a1);
     transform: scale(1.1); }
 #sobre p {
+  color: #777777;
   margin-top: 60px;
   margin-bottom: 0;
   font-size: 28px;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 50px;
-  text-align: center;
-  color: #2f2f2f; }
+  text-align: center; }
 #sobre .buttons-container {
   height: auto;
   width: 100%;
@@ -408,17 +396,19 @@ header i {
     text-align: center;
     color: #f9f9f9;
     opacity: 0;
-    font-family: Montserrat, Arial, sans-serif;
     font-weight: 500;
-    text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all 400ms ease; }
+    transition: all 400ms ease;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
   .thumb .titulo {
     line-height: 50px;
-    font-size: 24px; }
+    font-size: 24px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase; }
   .thumb .subtitulo {
     line-height: 500px;
-    font-size: 13px; }
+    font-size: 19px; }
 
 /*!
  * Hamburgers
@@ -446,17 +436,17 @@ header i {
 
 .hamburger-box {
   width: 40px;
-  height: 24px;
+  height: 27px;
   display: inline-block;
   position: relative; }
 
 .hamburger-inner {
   display: block;
   top: 50%;
-  margin-top: -2px; }
+  margin-top: -2.5px; }
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 40px;
-    height: 4px;
+    height: 5px;
     background-color: #2f2f2f;
     border-radius: 4px;
     position: absolute;
@@ -467,9 +457,9 @@ header i {
     content: "";
     display: block; }
   .hamburger-inner::before {
-    top: -10px; }
+    top: -11px; }
   .hamburger-inner::after {
-    bottom: -10px; }
+    bottom: -11px; }
 
 /*
  * Spin
@@ -497,8 +487,8 @@ header i {
 @keyframes img-reveal {
   0% {
     transform: translateY(0);
-    opacity: 0;
-    transform: scale(0); }
+    transform: scale(0);
+    opacity: 0; }
   30% {
     opacity: .9;
     transform: scale(1.1); }
@@ -519,7 +509,7 @@ body {
   z-index: 1;
   overflow-x: hidden;
   margin: 0;
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: Hind, Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
   background-color: #f9f9f9;
@@ -579,6 +569,7 @@ h2 {
   margin-bottom: 80px; }
 
 button:not(.hamburger) {
+  font-family: 'Montserrat', sans-serif;
   margin: 80px auto;
   padding: 20px 35px;
   background-color: #f9f9f9;

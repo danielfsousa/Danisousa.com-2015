@@ -12,13 +12,13 @@
   }
 
   p {
+    color: $text-color;
     margin-top: 60px;
     margin-bottom: 0;
     font-size: 28px;
-    font-weight: 300;
+    font-weight: 200;
     line-height: 50px;
     text-align: center;
-    color: $secondary-color;
   }
 
   .buttons-container {

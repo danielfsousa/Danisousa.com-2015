@@ -134,7 +134,7 @@ $(function () {
      ============================*/
     function setCopywriteYear() {
         var year = new Date().getFullYear();
-        $("#copyright").find("p").html("©" + year + " - Desenvolvido por: \<span\>Daniel Sousa\</span\>");
+        $("#copyright").find("p").html("© " + year + " - Desenvolvido por: \<span\>Daniel Sousa\</span\>");
     }
 
 
