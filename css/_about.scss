@@ -2,7 +2,8 @@
   img {
     position: relative;
     width: 300px;
-    animation: img-reveal .8s .5s backwards ease-out;
+    animation: img-reveal .8s .3s ease-out backwards;
+    animation-play-state: paused;
     transition: all .3s ease;
     &:hover {
       filter: drop-shadow(0 16px 20px #a1a1a1);
@@ -52,24 +53,4 @@
       }
   }
 
-}
-
-@keyframes img-reveal {
-  0% {
-    opacity: 0;
-    // top: -100px;
-    transform: scale(0);
-  }
-  30% {
-    opacity: .9;
-    transform: scale(1.1);
-  }
-  60% {
-    transform: scale(.95);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-    top: 0;
-  }
 }

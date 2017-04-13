@@ -10,6 +10,8 @@
 @import "footer";
 @import "portfolio";
 @import "hamburgers";
+@import "animations";
+
 html {
   padding: 0;
   margin: 0;
@@ -57,12 +59,24 @@ a:focus {
   position: fixed;
   top: 20px;
   right: 20px;
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all .3s ease;
  
+  &.is-shown {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      transition: all .3s !important;
+  }
   &.is-active {
     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-      transition: all .5s;
       background-color: $bg-color;
     }
+  }
+  &:hover {
+    opacity: .6;
   }
   &:focus {
     outline: none;

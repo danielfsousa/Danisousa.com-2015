@@ -37,7 +37,16 @@ nav {
   height: 100%;
   width: 100%;
   background-color: $main-color-nav-full;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.3);
+  transition: all .35s ease;
 
+  &.is-shown {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
   img {
     position: fixed;
     top: 30px;
