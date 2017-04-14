@@ -153,8 +153,7 @@ header h1 {
   margin-bottom: 50px; }
 
 header h1 span {
-  padding-right: 10px;
-  padding-bottom: 9px;
+  padding: 10px;
   border-top: 10px solid #77be32;
   border-bottom: 10px solid #77be32;
   font-weight: 600;
@@ -293,14 +292,14 @@ header i {
   #contato input:focus, #contato textarea:focus {
     color: #777777;
     outline: none;
-    border-color: #2f2f2f;
+    border-color: #77be32;
     -webkit-transition: all, 0.3s !important;
     -moz-transition: all, 0.3s !important;
     transition: all, 0.3s !important; }
 #contato input {
   width: 100%;
   padding: 10px 10px 5px 10px;
-  border-bottom: 2px solid #77be32;
+  border-bottom: 2px solid #2f2f2f;
   margin-bottom: 40px; }
   #contato input:invalid {
     box-shadow: none;
@@ -308,7 +307,7 @@ header i {
 #contato textarea {
   width: 100%;
   padding: 20px;
-  border: 2px solid #77be32;
+  border: 2px solid #2f2f2f;
   height: 360px; }
   @media screen and (max-width: 451px) {
     #contato textarea {
