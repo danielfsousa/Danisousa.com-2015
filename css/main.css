@@ -212,7 +212,7 @@ header i {
 #sobre img {
   position: relative;
   width: 300px;
-  animation: img-reveal .8s .3s ease-out backwards;
+  animation: img-reveal .75s .3s ease-out backwards;
   animation-play-state: paused;
   transition: all .3s ease; }
   #sobre img:hover {
@@ -341,10 +341,11 @@ header i {
   text-align: center;
   font-size: 16px;
   font-weight: 300; }
-  #copyright p {
-    padding-top: 42px; }
-  #copyright span {
-    color: #77be32; }
+  #copyright .fa {
+    padding-top: 42px;
+    margin-left: 10px; }
+  #copyright .fa-heart {
+    color: #c0392b; }
 
 .row.nogutters {
   margin-left: 0;
@@ -355,14 +356,26 @@ header i {
   padding-left: 0;
   padding-right: 0; }
 
+.flex {
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-flow: row wrap; }
+
+.flex__item {
+  flex: 1 1 350px;
+  height: 250px; }
+
 .thumb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
   text-align: center;
-  height: 250px;
-  width: 100%;
   background-size: 150%;
   background-position: center;
-  transform: translateZ(0);
-  transition: all .5s ease; }
+  transition: all .5s ease;
+  transform: translateZ(0); }
   .thumb:hover {
     background-size: 120%;
     background-position: relative;
@@ -379,36 +392,42 @@ header i {
     -moz-transition: all 0.3s cubic-bezier(0.3, 0.1, 0.58, 1);
     transition: all 0.3s cubic-bezier(0.3, 0.1, 0.58, 1); }
   .thumb:hover::before, .thumb:active::before {
-    background-color: rgba(119, 190, 50, 0.9);
+    background-color: rgba(249, 249, 249, 0.9);
     -webkit-transition: all 0.3s cubic-bezier(0.3, 0.1, 0.58, 1);
     -moz-transition: all 0.3s cubic-bezier(0.3, 0.1, 0.58, 1);
     transition: all 0.3s cubic-bezier(0.3, 0.1, 0.58, 1); }
   .thumb:hover span {
     opacity: 1; }
-  .thumb:hover .titulo {
-    line-height: 220px; }
-  .thumb:hover .subtitulo {
-    line-height: 320px; }
-  .thumb span {
-    display: block;
-    height: 1px;
-    position: relative;
-    text-align: center;
-    color: #f9f9f9;
-    opacity: 0;
-    font-weight: 500;
-    letter-spacing: 1px;
-    transition: all 400ms ease;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
-  .thumb .titulo {
-    line-height: 50px;
-    font-size: 24px;
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: 600;
-    text-transform: uppercase; }
-  .thumb .subtitulo {
-    line-height: 500px;
-    font-size: 19px; }
+  .thumb:hover .thumb__titulo, .thumb:hover .thumb__separator, .thumb:hover .thumb__subtitulo {
+    opacity: 1;
+    transform: translateY(0); }
+  .thumb:hover .thumb__separator {
+    width: 30px; }
+
+.thumb__titulo,
+.thumb__separator,
+.thumb__subtitulo {
+  opacity: 0;
+  transition: all .4s ease; }
+
+.thumb__titulo {
+  transform: translateY(-50px);
+  font-size: 24px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #2f2f2f; }
+
+.thumb__separator {
+  height: 3px;
+  width: 0;
+  margin: 5px auto 25px auto;
+  background-color: #77be32; }
+
+.thumb__subtitulo {
+  transform: translateY(50px);
+  font-size: 19px;
+  color: #777777; }
 
 /*!
  * Hamburgers
@@ -491,9 +510,9 @@ header i {
     opacity: 0; }
   30% {
     opacity: .9;
-    transform: scale(1.1); }
+    transform: scale(1.2); }
   60% {
-    transform: scale(0.95); }
+    transform: scale(0.9); }
   100% {
     transform: translateY(0);
     transform: scale(1);

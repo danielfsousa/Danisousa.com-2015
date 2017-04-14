@@ -2,7 +2,7 @@
   img {
     position: relative;
     width: 300px;
-    animation: img-reveal .8s .3s ease-out backwards;
+    animation: img-reveal .75s .3s ease-out backwards;
     animation-play-state: paused;
     transition: all .3s ease;
     &:hover {

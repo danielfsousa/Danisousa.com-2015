@@ -130,21 +130,9 @@ $(function () {
 
 
     /*============================
-     COPYWRITE YEAR
-     ============================*/
-    function setCopywriteYear() {
-        var year = new Date().getFullYear();
-        $("#copyright").find("p").html("© " + year + " - Desenvolvido por: \<span\>Daniel Sousa\</span\>");
-    }
-
-
-    /*============================
      INIT
      ============================*/
     function init() {
-        // Change copyright Year
-        setCopywriteYear();
-
         // Start Arrow Loop
         arrowLoop();
 

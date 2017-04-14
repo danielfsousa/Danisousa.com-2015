@@ -3,75 +3,90 @@
   margin-right: 0;
 }
 
-.row.no-gutters > [class^="col-"],
-.row.no-gutters > [class*="col-"] {
+.row.no-gutters>[class^="col-"],
+.row.no-gutters>[class*="col-"] {
   padding-left: 0;
   padding-right: 0;
 }
 
-.thumb {
-  text-align: center;
+.flex {
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex__item {
+  flex: 1 1 350px;
   height: 250px;
-  width: 100%;
+}
+
+.thumb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
   background-size: 150%;
   background-position: center;
-  transform: translateZ(0);
   transition: all .5s ease;
-
+  transform: translateZ(0);
+  
   &:hover {
     background-size: 120%;
     background-position: relative;
     transform: translateZ(0);
   }
-
   &::before {
     content: "";
     @include position(absolute, 0 0 0 0);
     background-color: rgba(0, 0, 0, 0.13);
     @include transition(all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000));
-
   }
-
   &:hover::before,
   &:active::before {
-    background-color: $main-color-opacity;
+    background-color: $bg-color-opacity;
     @include transition(all 0.3s cubic-bezier(0.300, 0.100, 0.580, 1.000));
   }
-
   &:hover span {
     opacity: 1;
   }
-
-  &:hover .titulo {
-    line-height: 220px;
+  &:hover .thumb__titulo, 
+  &:hover .thumb__separator,
+  &:hover .thumb__subtitulo {
+    opacity: 1;
+    transform: translateY(0);
   }
-  &:hover .subtitulo {
-    line-height: 320px;
-  }
-
-  span {
-    display: block;
-    height: 1px;
-    position: relative;
-    text-align: center;
-    color: $bg-color;
-    opacity: 0;
-    font-weight: 500;
-    letter-spacing: 1px;
-    transition: all 400ms ease;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
-  }
-
-  .titulo {
-    line-height: 50px;
-    font-size: 24px;
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  .subtitulo {
-    line-height: 500px;
-    font-size: 19px;
+  &:hover .thumb__separator {
+    width: 30px;
   }
 }
 
+.thumb__titulo, 
+.thumb__separator,
+.thumb__subtitulo {
+  opacity: 0;
+  transition: all .4s ease;
+}
+
+.thumb__titulo {
+  transform: translateY(-50px);
+  font-size: 24px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $secondary-color;
+}
+
+.thumb__separator {
+    height: 3px;
+    width: 0;
+    margin: 5px auto 25px auto;
+    background-color: $main-color;
+  }
+
+.thumb__subtitulo {
+  transform: translateY(50px);
+  font-size: 19px;
+  color: $text-color;
+}

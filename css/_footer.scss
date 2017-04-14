@@ -4,7 +4,6 @@
 }
 
 #copyright {
-
   position: fixed;
   bottom: 0;
   left: 0;
@@ -17,12 +16,11 @@
   font-size: 16px;
   font-weight: 300;
 
-  p {
+  .fa {
     padding-top: 42px;
+    margin-left: 10px;
   }
-
-  span {
-    color: $main-color;
+  .fa-heart {
+    color: $danger-color;
   }
-
 }
